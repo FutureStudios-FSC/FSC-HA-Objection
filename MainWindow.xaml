@@ -1,0 +1,83 @@
+﻿<Window x:Class="Objection_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="https://opensource.panuon.com/wpf-ui"
+        xmlns:local="clr-namespace:Objection_"
+        mc:Ignorable="d"
+        Title="Objection!!!" Height="450" Width="800" ResizeMode="CanMinimize" Icon="/badge.ico">
+    <Grid>
+        <Button x:Name="objection_"
+        Background="#FFF13F26"
+        pu:ButtonHelper.CornerRadius="5"
+        pu:ButtonHelper.HoverBackground="#FF7145"
+        pu:ButtonHelper.ClickBackground="#FF1919" Margin="514,358,10,10" Click="Button_Click" Content="Objection!" Foreground="White" FontSize="18" FontWeight="Bold" Cursor="Hand" IsDefault="True" />
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="20" Margin="10,0,0,401" VerticalAlignment="Bottom" Width="500" Source="/en.mp3" UnloadedBehavior="Stop" LoadedBehavior="Manual"/>
+        <Image x:Name="img" HorizontalAlignment="Left" Height="365" Margin="36,60,0,0" VerticalAlignment="Top" Width="457"/>
+        <Menu HorizontalAlignment="Left" Height="53" Margin="609,217,0,0" VerticalAlignment="Top" Width="120"/>
+        <TabControl Height="257" Margin="514,96,10,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="False">
+            <TabItem Header="常规">
+                <Grid Background="White">
+                    <ComboBox x:Name="langCombo" HorizontalAlignment="Center" Height="32" Margin="0,49,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="langCombo_SelectionChanged">
+                        <ComboBoxItem Content="中文 异议！"/>
+                        <ComboBoxItem Content="日文 異議あり！"/>
+                        <ComboBoxItem Content="英文 Objection!"/>
+                    </ComboBox>
+                    <Slider x:Name="volume" pu:SliderHelper.ThumbBackground="White" pu:SliderHelper.ThumbWidth="10" pu:SliderHelper.ThumbHeight="10" pu:SliderHelper.CoveredBackground="#FFF13F26" Height="49" VerticalAlignment="Center" Maximum="1" Value="0.5" Margin="10,0,10,0"/>
+                    <Label Content="有关使用说明，请访问&#xA;https://objectionFS.jzfkw.net/" HorizontalAlignment="Center" Height="45" Margin="0,172,0,0" VerticalAlignment="Top" Width="244" Background="White"/>
+                    <Button Content="拍桌" Margin="10,137,10,54" Cursor="Hand" Click="Button_Click_2"/>
+                    <ComboBox x:Name="charCombo" HorizontalAlignment="Center" Height="32" Margin="0,10,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="charCombo_SelectionChanged">
+                        <ComboBoxItem Content="成步堂龙一"/>
+                        <ComboBoxItem Content="御剑怜侍"/>
+                        <ComboBoxItem Content="绫里千寻"/>
+                        <ComboBoxItem Content="狩魔豪"/>
+                        <ComboBoxItem Content="狩魔冥"/>
+                        <ComboBoxItem Content="歌德"/>
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="自定义" Background="White">
+                <Grid Background="White">
+                    <TextBox x:Name="audioText" Height="40"
+                    pu:TextBoxHelper.Watermark="自定义音频地址"
+                    pu:TextBoxHelper.CornerRadius="4"
+                    pu:TextBoxHelper.FocusedForeground="#FF1919"
+                    pu:TextBoxHelper.FocusedBorderBrush="#FF1919"
+                    pu:TextBoxHelper.FocusedShadowColor="#FF1919"
+                    pu:ShadowHelper.Opacity="0.5"
+                    pu:ShadowHelper.BlurRadius="15"
+                    pu:ShadowHelper.ShadowDepth="5" Margin="10,10,10,171"/>
+                    <TextBox x:Name="imgText" Height="40"
+                        pu:TextBoxHelper.Watermark="自定义图片地址"
+                        pu:TextBoxHelper.CornerRadius="4"
+                        pu:TextBoxHelper.FocusedForeground="#FF1919"
+                        pu:TextBoxHelper.FocusedBorderBrush="#FF1919"
+                        pu:TextBoxHelper.FocusedShadowColor="#FF1919"
+                        pu:ShadowHelper.Opacity="0.5"
+                        pu:ShadowHelper.BlurRadius="15"
+                        pu:ShadowHelper.ShadowDepth="5" Margin="10,55,10,126"/>
+                    <CheckBox x:Name="urlAuto" Content="URL自动补全" Height="28" Margin="10,111,10,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <Button Content="网络素材" Margin="10,181,10,10" Click="Button_Click_1" Cursor="Hand"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="更多">
+                <Grid>
+                    <Button x:Name="pathCopy" Margin="10,178,10,10" Content="文件路径复制器" Foreground="#FF040000" FontSize="14" Cursor="Hand" Click="objection_复制__C__Click" />
+                    <Button x:Name="openSourcePath" Margin="10,140,10,48" Content="素材文件路径检查（弃用）" Foreground="Black" FontSize="14" Cursor="Hand" Click="officialWebpage_Click" IsEnabled="False" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="关于">
+                <Grid>
+                    <Label Content="Half-Auto OBJECTION! 半自动异议&#xA;v1.2 alpha&#xA;&#xA;素材/灵感来源：&#xA;objection.yvfox.com&#xA;www.pro-ivan.com/game/objection/&#xA;&#xA;版本概述：&#xA;第二个小版本加以改进，&#xA;添加了更多便利功能，便携版开发中。&#xA;&#xA;2024 Future Studio" Background="White" Margin="10,10,10,10"/>
+                    <Label Content="Half-Auto OBJECTION! 半自动异议&#xA;v2.0 release&#xA;&#xA;素材/灵感来源：&#xA;objection.yvfox.com&#xA;www.pro-ivan.com/game/objection/&#xA;iini.in/igiari&#xA;&#xA;版本概述：&#xA;改善兼容性，在任意文件夹中都可以使用！&#xD;&#xA;添加了更多语音包。&#xA;&#xA;2024 Future Studio" Background="White" Margin="10,10,10,0" Height="211" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <MediaElement x:Name="music" HorizontalAlignment="Left" Height="20" Margin="514,0,0,401" VerticalAlignment="Bottom" Width="269" Source="/en.mp3" UnloadedBehavior="Stop" LoadedBehavior="Manual"/>
+
+
+    </Grid>
+</Window>
